@@ -8,4 +8,16 @@ class ApplicationController < ActionController::Base
 
   def print
   end
+
+  def upload
+    decodedImage = params[:data_url].split(',', 2)[1].unpack('m')[0]
+
+    f = Tempfile.open('image', Rails.root.join('tmp') )
+    f.binmode
+    f.print(decodedImage)
+    f.close
+
+    @image = Image.create(file: f)
+    render :json => { url: image_path(@image) }
+  end
 end

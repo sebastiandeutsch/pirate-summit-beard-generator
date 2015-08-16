@@ -18,28 +18,34 @@ jQuery(function($) {
   if(document.querySelector("div#container")) {
     var image, container, kit;
 
-    image = new Image();
-    image.src = "/assets/image.jpg";
+    container = document.querySelector("div#container");
+    kit = new ImglyKit({
+      container: container,
+      assetsUrl: "/imglykit/assets", // Change this to where your assets are
+      ui: {
+        enabled: true // UI is disabled per default
+      }
+    });
+    kit.run();
 
-    image.onload = function () {
-      container = document.querySelector("div#container");
-      kit = new ImglyKit({
-        image: image,
-        container: container,
-        assetsUrl: "/imglykit/assets", // Change this to where your assets are
-        ui: {
-          enabled: true // UI is disabled per default
-        }
-      });
-      kit.run();
+    var button = document.querySelector("button#render");
+    button.addEventListener("click", function () {
+      kit.render("data-url", "image/png")
+        .then(function(dataUrl) {
+          var formData = new FormData();
+          formData.append('data_url', dataUrl);
+          formData.append('authenticity_token', $("meta[name='csrf-token']").attr('content'))
 
-      var button = document.querySelector("button#render");
-      button.addEventListener("click", function () {
-        kit.render("image", "image/png")
-          .then(function (image) {
-            document.body.appendChild(image);
-          });
-      });
-    };
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', '/upload', true);
+          xhr.onload = function(e) {
+            if (this.status == 200) {
+              var json = JSON.parse(this.response)
+              window.location.href = json.url;
+            }
+          };
+          xhr.send(formData);
+        });
+    });
   }
 })
