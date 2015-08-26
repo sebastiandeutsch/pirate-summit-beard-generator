@@ -1,7 +1,19 @@
-%video#v
-#container{ style: "width: 640px; height: 480px;" }
-%button#screenshot
-  Screenshot
+.container
+  .introduction-container
+    %ul
+      %li.active
+        1. Foto machen
+      %li
+        2. Geil machen
+      %li
+        3. Button machen
+  .video-container
+    %video#v{ style: "width: 855px; height: 641px;" }
+  .editor-container
+    #container{ style: "width: 855px; height: 641px;" }
+  .buttons-container
+    %button#screenshot
+      Screenshot
 
-%button#render
-  Render an Image
+    %button#render
+      Make the button
