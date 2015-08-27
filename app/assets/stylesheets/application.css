@@ -14,6 +14,14 @@
  *= require_self
  */
 
+ /* apply a natural box layout model to all elements, but allowing components to change */
+ html {
+   box-sizing: border-box;
+ }
+ *, *:before, *:after {
+   box-sizing: inherit;
+ }
+
 @media print {
   * {
     -webkit-print-color-adjust:exact;
@@ -109,11 +117,19 @@ button#screenshot, button#render {
   font-weight: bold;
 }
 
-.button-image {
+.border {
   margin-top: 5cm;
   margin-left: 5cm;
-  width: 2cm;
-  height: 2cm;
+  border: 1px solid #777;
+  padding: 0.305cm;
+  width: 3.19cm;
+  height: 3.19cm;
+  border-radius: 50%;
+}
+
+.button-image {
+  width: 2.55cm;
+  height: 2.55cm;
   background-size: cover;
   border-radius: 50%;
 }

@@ -84,7 +84,10 @@ jQuery(function($) {
 
           var stickersControl = kit.ui.controls.stickers;
           stickersControl.addSticker("laser", "stickers/sticker-laser.png");
-          stickersControl.selectStickers({ only: "glasses-nerd, laser" });
+          stickersControl.addSticker("beard-1", "stickers/sticker-beard-1.png");
+          stickersControl.addSticker("beard-2", "stickers/sticker-beard-2.png");
+          stickersControl.addSticker("lips-1", "stickers/sticker-lips-1.png");
+          stickersControl.selectStickers({ only: "glasses-nerd, laser, beard-1, beard-2, lips-1" });
 
           var button = document.querySelector("button#render");
           button.addEventListener("click", function () {
