@@ -83,11 +83,21 @@ jQuery(function($) {
           kit.run();
 
           var stickersControl = kit.ui.controls.stickers;
-          stickersControl.addSticker("laser", "stickers/sticker-laser.png");
-          stickersControl.addSticker("beard-1", "stickers/sticker-beard-1.png");
-          stickersControl.addSticker("beard-2", "stickers/sticker-beard-2.png");
-          stickersControl.addSticker("lips-1", "stickers/sticker-lips-1.png");
-          stickersControl.selectStickers({ only: "glasses-nerd, laser, beard-1, beard-2, lips-1" });
+           stickersControl.addSticker("beard-1", "stickers/sticker-beard-1.png");
+           stickersControl.addSticker("beard-2", "stickers/sticker-beard-2.png");
+           stickersControl.addSticker("glasses-1", "stickers/sticker-glasses-nerd.png");
+           stickersControl.addSticker("glasses-2", "stickers/sticker-glasses-normal.png");
+           stickersControl.addSticker("glasses-3", "stickers/sticker-glasses-shutter-green.png");
+           stickersControl.addSticker("glasses-4", "stickers/sticker-glasses-shutter-yellow.png");
+           stickersControl.addSticker("glasses-5", "stickers/sticker-glasses-sun.png");
+           stickersControl.addSticker("hat-cap", "stickers/sticker-hat-cap.png");
+           stickersControl.addSticker("hat-cylinder", "stickers/sticker-hat-cylinder.png");
+           stickersControl.addSticker("hat-sheriff", "stickers/sticker-hat-sheriff.png");
+           stickersControl.addSticker("heart", "stickers/sticker-heart.png");
+           stickersControl.addSticker("laser", "stickers/sticker-laser.png");
+           stickersControl.addSticker("lips-1", "stickers/sticker-lips-1.png");
+
+           stickersControl.selectStickers({ only: "beard-1, beard-2, glasses-1, glasses-2, glasses-3, glasses-4,glasses-5, hat-cap, hat-cylinder, hat-sheriff, heart, laser, lips-1 " });
 
           var button = document.querySelector("button#render");
           button.addEventListener("click", function () {
