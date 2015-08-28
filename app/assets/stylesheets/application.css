@@ -69,6 +69,7 @@ html, body {
 
 .video-container {
   display: block;
+  position: relative;
   margin-top: 25px;
   margin-bottom: 25px;
 }
