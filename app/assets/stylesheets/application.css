@@ -134,3 +134,16 @@ button#screenshot, button#render {
   background-size: cover;
   border-radius: 50%;
 }
+
+.all-images {
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+
+}
+
+.all-images .image {
+  width: 150px;
+  height: 150px;
+  float: left;
+}

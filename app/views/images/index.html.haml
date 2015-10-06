@@ -1,0 +1,6 @@
+.all-images
+  %ul
+    - @images.each do |image|
+      %li
+        = link_to dontshow_image_path(image) do
+          .image{ style: "background: transparent url(#{image.file.url}) 50% 50% no-repeat; background-size: cover;" }
